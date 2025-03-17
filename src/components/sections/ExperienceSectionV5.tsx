@@ -1,6 +1,5 @@
 
 import React from 'react';
-import SectionContainer from '../SectionContainer';
 import { useInView } from 'react-intersection-observer';
 import { ExternalLink } from 'lucide-react';
 
@@ -46,56 +45,64 @@ const ExperienceSectionV5 = () => {
   });
 
   return (
-    <SectionContainer id="experience" className="py-16">
-      <h2 className="text-xl uppercase tracking-widest text-slate-light mb-8">Experience</h2>
-      
-      <div 
-        ref={ref}
-        className={`space-y-12 transition-all duration-500 transform ${
-          inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}
-      >
-        {jobs.map((job, index) => (
-          <div key={index} className="pb-12 relative last:pb-0">
-            <div className="flex flex-col md:flex-row gap-6">
-              <div className="w-full md:w-48 flex-shrink-0">
-                <p className="font-mono text-xs text-slate">{job.period}</p>
-              </div>
-              <div className="flex-grow">
-                <h3 className="text-xl text-slate-light font-semibold flex items-center gap-2 mb-1">
-                  {job.title}
-                  {job.company && (
-                    <>
-                      <span className="text-slate-dark">&mdash;</span>
-                      <a 
-                        href={job.companyUrl} 
-                        className="text-aqua hover:underline inline-flex items-center" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                      >
-                        {job.company}
-                        <ExternalLink size={14} className="ml-1" />
-                      </a>
-                    </>
-                  )}
-                </h3>
-                <p className="text-slate mb-4">{job.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {job.tags.map((tag, tagIndex) => (
-                    <span 
-                      key={tagIndex} 
-                      className="text-xs py-1 px-3 rounded-full border border-slate-dark text-slate"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+    <section id="experience" className="w-full">
+      <div className="w-full max-w-7xl mx-auto flex flex-col md:flex-row">
+        {/* Empty left column for spacing on large screens */}
+        <div className="hidden md:block md:w-72 lg:w-96 flex-shrink-0"></div>
+        
+        {/* Right content column */}
+        <div className="w-full px-6 py-24 md:py-16">
+          <h2 className="text-xl uppercase tracking-widest text-slate-light mb-8">Experience</h2>
+          
+          <div 
+            ref={ref}
+            className={`space-y-12 transition-all duration-500 transform ${
+              inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}
+          >
+            {jobs.map((job, index) => (
+              <div key={index} className="pb-12 relative last:pb-0">
+                <div className="flex flex-col md:flex-row gap-6">
+                  <div className="w-full md:w-48 flex-shrink-0">
+                    <p className="font-mono text-xs text-slate">{job.period}</p>
+                  </div>
+                  <div className="flex-grow">
+                    <h3 className="text-xl text-slate-light font-semibold flex items-center gap-2 mb-1">
+                      {job.title}
+                      {job.company && (
+                        <>
+                          <span className="text-slate-dark">&mdash;</span>
+                          <a 
+                            href={job.companyUrl} 
+                            className="text-aqua hover:underline inline-flex items-center" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                          >
+                            {job.company}
+                            <ExternalLink size={14} className="ml-1" />
+                          </a>
+                        </>
+                      )}
+                    </h3>
+                    <p className="text-slate mb-4">{job.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {job.tags.map((tag, tagIndex) => (
+                        <span 
+                          key={tagIndex} 
+                          className="text-xs py-1 px-3 rounded-full border border-slate-dark text-slate"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
-    </SectionContainer>
+    </section>
   );
 };
 

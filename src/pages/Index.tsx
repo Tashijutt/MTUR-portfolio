@@ -6,14 +6,14 @@ import EmailLink from '@/components/EmailLink';
 import Footer from '@/components/Footer';
 import VersionToggle from '@/components/VersionToggle';
 
-// V4 Components (Current)
+// V4 Components (Previous)
 import HeroSection from '@/components/sections/HeroSection';
 import AboutSection from '@/components/sections/AboutSection';
 import ExperienceSection from '@/components/sections/ExperienceSection';
 import WorkSection from '@/components/sections/WorkSection';
 import ContactSection from '@/components/sections/ContactSection';
 
-// V5 Components (New)
+// V5 Components (Latest)
 import HeroSectionV5 from '@/components/sections/HeroSectionV5';
 import BioSectionV5 from '@/components/sections/BioSectionV5';
 import ExperienceSectionV5 from '@/components/sections/ExperienceSectionV5';
@@ -35,7 +35,7 @@ const Index = () => {
           const element = document.getElementById(elementId);
           if (element) {
             window.scrollTo({
-              top: element.offsetTop - 80, // Offset for header
+              top: element.offsetTop - (currentVersion === 'v4' ? 80 : 0), // Offset for header only in v4
               behavior: 'smooth'
             });
           }
@@ -45,16 +45,16 @@ const Index = () => {
 
     document.addEventListener('click', handleAnchorClick);
     return () => document.removeEventListener('click', handleAnchorClick);
-  }, []);
+  }, [currentVersion]);
 
   const toggleVersion = () => {
     setCurrentVersion(prev => prev === 'v4' ? 'v5' : 'v4');
   };
 
   return (
-    <div className="relative">
-      <Header />
-      <main className="bg-navy pt-16 pb-12">
+    <div className={`relative ${currentVersion === 'v5' ? 'pt-0' : 'pt-16'}`}>
+      <Header currentVersion={currentVersion} />
+      <main className={`bg-navy ${currentVersion === 'v5' ? 'pb-12' : 'pt-16 pb-12'}`}>
         {currentVersion === 'v4' ? (
           // V4 Content
           <>

@@ -4,7 +4,14 @@ import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-const Header = () => {
+interface HeaderProps {
+  currentVersion: 'v4' | 'v5';
+}
+
+const Header = ({ currentVersion }: HeaderProps) => {
+  // Only show header for v4
+  if (currentVersion === 'v5') return null;
+
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   

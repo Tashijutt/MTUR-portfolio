@@ -1,6 +1,5 @@
 
 import React from 'react';
-import SectionContainer from '../SectionContainer';
 import { useInView } from 'react-intersection-observer';
 
 const BioSectionV5 = () => {
@@ -10,30 +9,38 @@ const BioSectionV5 = () => {
   });
 
   return (
-    <SectionContainer id="bio" className="py-16">
-      <div 
-        ref={ref}
-        className={`max-w-4xl transition-all duration-500 transform ${
-          inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}
-      >
-        <p className="text-slate mb-4">
-          I'm a developer passionate about crafting accessible, user-perfect experiences, specializing in frontend development. My expertise lives at the intersection of design and development, creating experiences that not only look great but are meticulously built for performance and usability.
-        </p>
+    <section id="bio" className="w-full">
+      <div className="w-full max-w-7xl mx-auto flex flex-col md:flex-row">
+        {/* Empty left column for spacing on large screens */}
+        <div className="hidden md:block md:w-72 lg:w-96 flex-shrink-0"></div>
         
-        <p className="text-slate mb-4">
-          Currently, I'm a Senior Front-End Engineer at <a href="#" className="text-aqua hover:underline">Kleytcx</a>, specializing in accessibility. I contribute to the development of UI components that power Kleytcx's frontend, ensuring our platform meets web accessibility standards and best practices to deliver an inclusive user experience.
-        </p>
-        
-        <p className="text-slate mb-4">
-          In the past, I've had the opportunity to develop software across a variety of environments—from <a href="#" className="text-aqua hover:underline">advertising agencies</a> to <a href="#" className="text-aqua hover:underline">large corporations</a> to <a href="#" className="text-aqua hover:underline">start-ups</a>—and most recently, I've been helping college students learn web development as an <a href="#" className="text-aqua hover:underline">online video course</a> instructor. A few years ago, guiding learners through building a web app with the Spotify API.
-        </p>
-        
-        <p className="text-slate">
-          In my spare time, I'm usually climbing, reading, hanging out with my wife and two cats, or running around Hyrule listening to <a href="#" className="text-aqua hover:underline">Kpop divas</a>.
-        </p>
+        {/* Right content column */}
+        <div className="w-full px-6 py-24 md:py-32">
+          <div 
+            ref={ref}
+            className={`max-w-xl transition-all duration-500 transform ${
+              inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}
+          >
+            <p className="text-slate mb-4">
+              I'm a developer passionate about crafting accessible, user-perfect experiences, specializing in frontend development. My expertise lives at the intersection of design and development, creating experiences that not only look great but are meticulously built for performance and usability.
+            </p>
+            
+            <p className="text-slate mb-4">
+              Currently, I'm a Senior Front-End Engineer at <a href="#" className="text-aqua hover:underline">Kleytcx</a>, specializing in accessibility. I contribute to the development of UI components that power Kleytcx's frontend, ensuring our platform meets web accessibility standards and best practices to deliver an inclusive user experience.
+            </p>
+            
+            <p className="text-slate mb-4">
+              In the past, I've had the opportunity to develop software across a variety of environments—from <a href="#" className="text-aqua hover:underline">advertising agencies</a> to <a href="#" className="text-aqua hover:underline">large corporations</a> to <a href="#" className="text-aqua hover:underline">start-ups</a>—and most recently, I've been helping college students learn web development as an <a href="#" className="text-aqua hover:underline">online video course</a> instructor. A few years ago, guiding learners through building a web app with the Spotify API.
+            </p>
+            
+            <p className="text-slate">
+              In my spare time, I'm usually climbing, reading, hanging out with my wife and two cats, or running around Hyrule listening to <a href="#" className="text-aqua hover:underline">Kpop divas</a>.
+            </p>
+          </div>
+        </div>
       </div>
-    </SectionContainer>
+    </section>
   );
 };
 
