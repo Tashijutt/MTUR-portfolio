@@ -4,14 +4,7 @@ import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-interface HeaderProps {
-  currentVersion: 'v4' | 'v5';
-}
-
-const Header = ({ currentVersion }: HeaderProps) => {
-  // Only show header for v4
-  if (currentVersion === 'v5') return null;
-
+const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   
@@ -41,7 +34,7 @@ const Header = ({ currentVersion }: HeaderProps) => {
     >
       <div className="max-w-6xl mx-auto flex items-center justify-between">
         <Link to="/" className="inline-block">
-          <div className="text-aqua font-mono text-2xl font-bold">BC</div>
+          <div className="text-aqua font-mono text-2xl font-bold">JS</div>
         </Link>
 
         {/* Desktop navigation */}

@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import SectionHeading from '../SectionHeading';
 import SectionContainer from '../SectionContainer';
 import { useInView } from 'react-intersection-observer';
@@ -12,8 +12,8 @@ const AboutSection = () => {
 
   const skills = [
     'JavaScript (ES6+)', 'TypeScript', 'React', 
-    'Eleventy', 'Node.js', 'WordPress',
-    'Angular', 'Vue', 'AWS'
+    'Node.js', 'Next.js', 'Angular',
+    'TailwindCSS', 'GraphQL', 'Python'
   ];
 
   return (
@@ -28,21 +28,21 @@ const AboutSection = () => {
       >
         <div className="md:col-span-2 space-y-4 text-slate">
           <p>
-            Hello! My name is Brittany and I enjoy creating things that live on the internet. 
+            Hello! My name is John and I enjoy creating things that live on the internet. 
             My interest in web development started back in 2012 when I decided to try editing custom Tumblr themes — turns out hacking together a custom reblog button taught me a lot about HTML & CSS!
           </p>
           
           <p>
             Fast-forward to today, and I've had the privilege of working at{' '}
-            <a href="https://us.mullenlowe.com/" target="_blank" rel="noopener noreferrer" className="text-aqua hover:underline">an advertising agency</a>,{' '}
-            <a href="https://starry.com/" target="_blank" rel="noopener noreferrer" className="text-aqua hover:underline">a start-up</a>,{' '}
-            <a href="https://www.apple.com/" target="_blank" rel="noopener noreferrer" className="text-aqua hover:underline">a huge corporation</a>, and{' '}
-            <a href="https://scout.camd.northeastern.edu/" target="_blank" rel="noopener noreferrer" className="text-aqua hover:underline">a student-led design studio</a>.
+            <a href="#" className="text-aqua hover:underline">an advertising agency</a>,{' '}
+            <a href="#" className="text-aqua hover:underline">a start-up</a>,{' '}
+            <a href="#" className="text-aqua hover:underline">a huge corporation</a>, and{' '}
+            <a href="#" className="text-aqua hover:underline">a student-led design studio</a>.
           </p>
           
           <p>
             My main focus these days is building accessible, inclusive products and digital experiences at{' '}
-            <a href="https://upstatement.com/" target="_blank" rel="noopener noreferrer" className="text-aqua hover:underline">Upstatement</a> for a variety of clients.
+            <a href="#" className="text-aqua hover:underline">Company Name</a> for a variety of clients.
           </p>
           
           <p>Here are a few technologies I've been working with recently:</p>
@@ -60,8 +60,8 @@ const AboutSection = () => {
         <div className="relative group">
           <div className="relative w-full aspect-square rounded overflow-hidden bg-aqua/20 z-10">
             <img 
-              src="https://brittanychiang.com/static/30a645f7db6038f83287d0c596b888b1/f9526/me.avif" 
-              alt="Brittany Chiang" 
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" 
+              alt="John Smith" 
               className="w-full h-full object-cover mix-blend-multiply grayscale hover:grayscale-0 hover:mix-blend-normal transition-all duration-300"
             />
             <div className="absolute inset-0 bg-aqua/20 hover:bg-transparent transition-colors duration-300"></div>
