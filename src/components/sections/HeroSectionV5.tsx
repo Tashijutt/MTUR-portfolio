@@ -1,6 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
+import { ExternalLink } from 'lucide-react';
 
 const HeroSectionV5 = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -40,7 +41,7 @@ const HeroSectionV5 = () => {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}
           >
-            I build accessible, user-perfect digital experiences for the web.
+            I build accessible, pixel-perfect digital experiences for the web.
           </p>
 
           {/* Navigation links */}

@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Github, Linkedin, Twitter, Mail } from 'lucide-react';
+import { Github, Linkedin, Twitter, Instagram, ExternalLink } from 'lucide-react';
 
 interface SocialLinksProps {
   orientation?: 'vertical' | 'horizontal';
@@ -10,23 +10,23 @@ const SocialLinks = ({ orientation = 'vertical' }: SocialLinksProps) => {
   const socialItems = [
     { 
       Icon: Github, 
-      href: 'https://github.com/yourusername', 
+      href: 'https://github.com/bchiang7', 
       label: 'GitHub'
     },
     { 
       Icon: Linkedin, 
-      href: 'https://linkedin.com/in/yourusername', 
+      href: 'https://linkedin.com/in/bchiang7', 
       label: 'LinkedIn'
     },
     { 
       Icon: Twitter, 
-      href: 'https://twitter.com/yourusername', 
+      href: 'https://twitter.com/bchiang7', 
       label: 'Twitter'
     },
     { 
-      Icon: Mail, 
-      href: 'mailto:email@example.com', 
-      label: 'Email'
+      Icon: Instagram, 
+      href: 'https://instagram.com/bchiang7', 
+      label: 'Instagram'
     }
   ];
 

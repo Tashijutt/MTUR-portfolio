@@ -41,7 +41,7 @@ const Header = ({ currentVersion }: HeaderProps) => {
     >
       <div className="max-w-6xl mx-auto flex items-center justify-between">
         <Link to="/" className="inline-block">
-          <div className="text-aqua font-mono text-2xl font-bold">JS</div>
+          <div className="text-aqua font-mono text-2xl font-bold">BC</div>
         </Link>
 
         {/* Desktop navigation */}

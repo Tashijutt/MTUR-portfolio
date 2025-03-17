@@ -1,6 +1,8 @@
 
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
+import { Button } from '@/components/ui/button';
+import { ExternalLink } from 'lucide-react';
 
 const ContactSectionV5 = () => {
   const [ref, inView] = useInView({

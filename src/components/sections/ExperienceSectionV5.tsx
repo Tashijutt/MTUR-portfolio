@@ -67,7 +67,7 @@ const ExperienceSectionV5 = () => {
                     <p className="font-mono text-xs text-slate">{job.period}</p>
                   </div>
                   <div className="flex-grow">
-                    <h3 className="text-xl text-slate-light font-semibold flex items-center gap-2 mb-1">
+                    <h3 className="text-xl text-slate-light font-semibold flex items-center gap-2 mb-1 flex-wrap">
                       {job.title}
                       {job.company && (
                         <>
