@@ -53,8 +53,10 @@ const Index = () => {
 
   return (
     <div className={`relative ${currentVersion === 'v5' ? 'pt-0' : 'pt-16'}`}>
-      <Header currentVersion={currentVersion} />
-      <main className={`bg-navy ${currentVersion === 'v5' ? 'pb-12' : 'pt-16 pb-12'}`}>
+      {/* Only show header in v4 */}
+      {currentVersion === 'v4' && <Header currentVersion={currentVersion} />}
+      
+      <main className={`bg-navy ${currentVersion === 'v5' ? '' : 'pt-16 pb-12'}`}>
         {currentVersion === 'v4' ? (
           // V4 Content
           <>
@@ -66,18 +68,27 @@ const Index = () => {
           </>
         ) : (
           // V5 Content
-          <>
+          <div className="min-h-screen">
             <HeroSectionV5 />
-            <BioSectionV5 />
-            <ExperienceSectionV5 />
-            <WorkSectionV5 />
-            <ContactSectionV5 />
-          </>
+            <div className="md:ml-0 md:pl-0">
+              <BioSectionV5 />
+              <ExperienceSectionV5 />
+              <WorkSectionV5 />
+              <ContactSectionV5 />
+            </div>
+          </div>
         )}
       </main>
-      <SocialLinks orientation="vertical" />
-      <SocialLinks orientation="horizontal" />
-      <EmailLink />
+      
+      {/* Only show social links and email link in v4 mode */}
+      {currentVersion === 'v4' && (
+        <>
+          <SocialLinks orientation="vertical" />
+          <SocialLinks orientation="horizontal" />
+          <EmailLink />
+        </>
+      )}
+      
       <Footer />
       <VersionToggle onToggleVersion={toggleVersion} currentVersion={currentVersion} />
     </div>

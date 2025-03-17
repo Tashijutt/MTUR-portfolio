@@ -51,7 +51,7 @@ const ExperienceSectionV5 = () => {
         <div className="hidden md:block md:w-72 lg:w-96 flex-shrink-0"></div>
         
         {/* Right content column */}
-        <div className="w-full px-6 py-24 md:py-16">
+        <div className="w-full px-6 py-12 md:py-16">
           <h2 className="text-xl uppercase tracking-widest text-slate-light mb-8">Experience</h2>
           
           <div 

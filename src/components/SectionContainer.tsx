@@ -20,11 +20,11 @@ const SectionContainer = ({ id, children, className, version = 'v4' }: SectionCo
         )}
       >
         <div className="w-full max-w-7xl mx-auto flex flex-col md:flex-row">
-          {/* Empty left column for spacing on large screens */}
+          {/* Empty left column for spacing on large screens, accounting for fixed sidebar */}
           <div className="hidden md:block md:w-72 lg:w-96 flex-shrink-0"></div>
           
           {/* Right content column */}
-          <div className="w-full px-6 py-24 md:py-32">
+          <div className="w-full px-6 py-12 md:py-16">
             {children}
           </div>
         </div>

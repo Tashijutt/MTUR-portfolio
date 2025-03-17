@@ -17,7 +17,7 @@ const ContactSectionV5 = () => {
         <div className="hidden md:block md:w-72 lg:w-96 flex-shrink-0"></div>
         
         {/* Right content column */}
-        <div className="w-full px-6 py-24 md:py-16">
+        <div className="w-full px-6 py-12 md:py-16">
           <div 
             ref={ref}
             className={`max-w-xl transition-all duration-500 transform ${
