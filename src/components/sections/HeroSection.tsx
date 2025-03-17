@@ -28,7 +28,7 @@ const HeroSection = () => {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          John Smith.
+          Brittany Chiang.
         </h1>
         
         <h2 
@@ -47,12 +47,12 @@ const HeroSection = () => {
           I'm a software engineer specializing in building (and occasionally designing) exceptional digital experiences. 
           Currently, I'm focused on building accessible, human-centered products at{' '}
           <a 
-            href="https://example.com" 
+            href="https://upstatement.com" 
             target="_blank" 
             rel="noopener noreferrer"
             className="text-aqua hover:underline"
           >
-            Company Name
+            Upstatement
           </a>.
         </p>
         
@@ -62,10 +62,12 @@ const HeroSection = () => {
           }`}
         >
           <a 
-            href="#work" 
+            href="https://github.com/bchiang7/v4" 
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block border border-aqua text-aqua font-mono px-7 py-4 rounded hover:bg-aqua/10 transition-colors duration-300"
           >
-            Check out my work!
+            Check out my portfolio!
           </a>
         </div>
       </div>

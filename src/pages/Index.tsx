@@ -9,7 +9,6 @@ import ExperienceSection from '@/components/sections/ExperienceSection';
 import WorkSection from '@/components/sections/WorkSection';
 import ContactSection from '@/components/sections/ContactSection';
 import Footer from '@/components/Footer';
-import { useInView } from 'react-intersection-observer';
 
 const Index = () => {
   // Helper function to handle smooth scrolling to anchors
