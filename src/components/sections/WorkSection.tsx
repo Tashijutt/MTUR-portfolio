@@ -26,7 +26,7 @@ const projects = [
   },
   {
     title: 'Build a Spotify Connected App',
-    description: 'A comprehensive guide on building a Spotify connected app with user authentication using React, Node.js, and Spotify's Web API, complete with step-by-step tutorials and code examples.',
+    description: 'A comprehensive guide on building a Spotify connected app with user authentication using React, Node.js, and Spotify\'s Web API, complete with step-by-step tutorials and code examples.',
     tags: ['React', 'Express', 'Spotify API', 'Styled Components'],
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1115&q=80',
     github: 'https://github.com',
