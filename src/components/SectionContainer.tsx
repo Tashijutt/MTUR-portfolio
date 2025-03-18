@@ -13,7 +13,7 @@ const SectionContainer = ({ id, children, className }: SectionContainerProps) =>
     <section 
       id={id}
       className={cn(
-        'min-h-screen w-full max-w-4xl mx-auto px-6 py-24 md:py-32 flex flex-col justify-center',
+        'min-h-screen w-full max-w-4xl mx-auto px-6 py-24 md:py-32 flex flex-col',
         className
       )}
     >

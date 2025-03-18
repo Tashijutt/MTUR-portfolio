@@ -7,6 +7,7 @@ import HeroSection from '@/components/sections/HeroSection';
 import AboutSection from '@/components/sections/AboutSection';
 import ExperienceSection from '@/components/sections/ExperienceSection';
 import WorkSection from '@/components/sections/WorkSection';
+import OtherProjectsSection from '@/components/sections/OtherProjectsSection';
 import ContactSection from '@/components/sections/ContactSection';
 import Footer from '@/components/Footer';
 import { useInView } from 'react-intersection-observer';
@@ -44,6 +45,7 @@ const Index = () => {
         <AboutSection />
         <ExperienceSection />
         <WorkSection />
+        <OtherProjectsSection />
         <ContactSection />
       </main>
       <SocialLinks orientation="vertical" />
