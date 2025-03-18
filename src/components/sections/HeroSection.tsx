@@ -13,7 +13,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="min-h-screen w-full max-w-5xl mx-auto px-6 flex flex-col justify-center">
+    <section className="min-h-screen w-full max-w-5xl mx-auto px-6 flex flex-col justify-center pt-16">
       <div className="space-y-5">
         <p 
           className={`text-aqua font-mono mb-5 transition-all duration-300 delay-100 transform ${
@@ -28,7 +28,7 @@ const HeroSection = () => {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          John Smith.
+          Brittany Chiang.
         </h1>
         
         <h2 
@@ -47,12 +47,12 @@ const HeroSection = () => {
           I'm a software engineer specializing in building (and occasionally designing) exceptional digital experiences. 
           Currently, I'm focused on building accessible, human-centered products at{' '}
           <a 
-            href="https://example.com" 
+            href="https://upstatement.com" 
             target="_blank" 
             rel="noopener noreferrer"
             className="text-aqua hover:underline"
           >
-            Company Name
+            Upstatement
           </a>.
         </p>
         

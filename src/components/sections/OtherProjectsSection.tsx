@@ -7,47 +7,46 @@ import { Folder, ExternalLink, Github } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 
-// Sample project data - you can replace this with your actual projects
 const otherProjects = [
   {
-    title: 'Markdown Previewer',
-    description: 'A real-time markdown previewer built with React. Features include syntax highlighting, custom toolbar, and export options.',
-    tags: ['React', 'Markdown', 'CSS'],
+    title: 'Integrating Algolia Search with WordPress Multisite',
+    description: 'Building a custom multisite WordPress plugin to build global search with Algolia',
+    tags: ['Algolia', 'WordPress', 'PHP'],
     github: 'https://github.com',
     external: 'https://example.com'
   },
   {
-    title: 'Finance Tracker',
-    description: 'A personal finance tracking application with data visualization, budget planning, and expense categorization features.',
-    tags: ['TypeScript', 'Chart.js', 'Firebase'],
+    title: 'Time to Have More Fun',
+    description: 'A single page web app for helping me choose where to travel, built with Next.js, Firebase, and Tailwind CSS',
+    tags: ['Next.js', 'Tailwind CSS', 'Firebase'],
     github: 'https://github.com',
     external: 'https://example.com'
   },
   {
-    title: 'Recipe Finder',
-    description: 'Search engine for recipes based on available ingredients. Includes filtering by dietary restrictions and nutritional information.',
-    tags: ['JavaScript', 'API', 'Responsive Design'],
+    title: 'Building a Headless Mobile App CMS From Scratch',
+    description: 'Find out how we built a custom headless CMS with Node, Express, and Firebase for a mobile app',
+    tags: ['Node.js', 'Express', 'Firebase'],
     github: 'https://github.com',
     external: 'https://example.com'
   },
   {
-    title: 'Task Management App',
-    description: 'Kanban-style task management application with drag-and-drop functionality, due dates, priority levels, and team assignment features.',
-    tags: ['React', 'DnD', 'Node.js'],
+    title: 'OctoProfile',
+    description: 'A nicer look at your GitHub profile and repo stats. Includes data visualizations of your top languages, starred repositories, and sort through your top repos by number of stars, forks, and size.',
+    tags: ['React', 'Chart.js', 'GitHub API'],
     github: 'https://github.com',
     external: 'https://example.com'
   },
   {
-    title: 'Portfolio Template',
-    description: 'Customizable portfolio template for developers and designers. Features include dark/light mode, project showcase, and contact form.',
-    tags: ['HTML', 'CSS', 'JavaScript'],
+    title: 'Google Keep Clone',
+    description: 'A simple Google Keep clone built with Vue and Firebase',
+    tags: ['Vue', 'Firebase'],
     github: 'https://github.com',
     external: 'https://example.com'
   },
   {
-    title: 'Weather Dashboard',
-    description: 'Weather forecast application showing current conditions and 5-day predictions. Integrates with geolocation and saves favorite locations.',
-    tags: ['React', 'Weather API', 'Geolocation'],
+    title: 'Apple Music Embeddable Web Player Widget',
+    description: 'Embeddable Apple Music web player widget for WordPress blogs, with playlist support.',
+    tags: ['WordPress', 'Apple Music API', 'JS'],
     github: 'https://github.com',
     external: 'https://example.com'
   }
@@ -74,7 +73,7 @@ const ProjectCard = ({ project, index }: { project: typeof otherProjects[0], ind
         <div className="text-aqua">
           <Folder size={40} />
         </div>
-        <div className="flex gap-3">
+        <div className="flex gap-4">
           {project.github && (
             <a 
               href={project.github}
@@ -109,7 +108,7 @@ const ProjectCard = ({ project, index }: { project: typeof otherProjects[0], ind
             {project.title}
           </a>
         </h3>
-        <p className="text-slate mb-4">{project.description}</p>
+        <p className="text-slate text-sm mb-6">{project.description}</p>
       </div>
       <footer>
         <ul className="flex flex-wrap gap-x-3 gap-y-2 mt-2">
@@ -132,32 +131,42 @@ const OtherProjectsSection = () => {
     setShowMore(!showMore);
   };
 
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   return (
-    <SectionContainer id="other-projects" className="relative">
-      <div className="text-center mb-12">
-        <SectionHeading number="04" title="Other Noteworthy Projects" className="justify-center" />
+    <SectionContainer id="other-projects" className="relative py-12 md:py-20">
+      <div 
+        ref={ref}
+        className={`text-center mb-16 transition-all duration-500 transform ${
+          inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}
+      >
+        <h2 className="text-slate-light text-3xl font-bold">Other Noteworthy Projects</h2>
         <a 
           href="https://github.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block text-aqua hover:underline font-mono text-sm"
+          className="inline-block text-aqua hover:underline font-mono text-sm mt-2"
         >
           view the archive
         </a>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {visibleProjects.map((project, index) => (
           <ProjectCard key={index} project={project} index={index} />
         ))}
       </div>
       
       {otherProjects.length > 6 && (
-        <div className="flex justify-center mt-12">
+        <div className="flex justify-center mt-16">
           <Button
             onClick={toggleShowMore}
             variant="outline"
-            className="border border-aqua text-aqua hover:bg-aqua/10 px-5 py-3 rounded"
+            className="border border-aqua text-aqua hover:bg-aqua/10 px-6 py-3 rounded"
           >
             {showMore ? "Show Less" : "Show More"}
           </Button>

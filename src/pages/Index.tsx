@@ -1,5 +1,5 @@
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from '@/components/Header';
 import SocialLinks from '@/components/SocialLinks';
 import EmailLink from '@/components/EmailLink';
@@ -10,9 +10,18 @@ import WorkSection from '@/components/sections/WorkSection';
 import OtherProjectsSection from '@/components/sections/OtherProjectsSection';
 import ContactSection from '@/components/sections/ContactSection';
 import Footer from '@/components/Footer';
-import { useInView } from 'react-intersection-observer';
 
 const Index = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  // Simulate loading and animate in the content
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 500);
+    return () => clearTimeout(timer);
+  }, []);
+
   // Helper function to handle smooth scrolling to anchors
   useEffect(() => {
     const handleAnchorClick = (e: MouseEvent) => {
@@ -38,9 +47,9 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="relative">
+    <div className={`relative ${isLoading ? 'opacity-0' : 'opacity-100 transition-opacity duration-500'}`}>
       <Header />
-      <main className="bg-navy pt-16 pb-12">
+      <main className="bg-navy pt-0 pb-0">
         <HeroSection />
         <AboutSection />
         <ExperienceSection />
@@ -49,7 +58,6 @@ const Index = () => {
         <ContactSection />
       </main>
       <SocialLinks orientation="vertical" />
-      <SocialLinks orientation="horizontal" />
       <EmailLink />
       <Footer />
     </div>

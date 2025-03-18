@@ -7,15 +7,32 @@ import { cn } from '@/lib/utils';
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true);
   
   useEffect(() => {
     const handleScroll = () => {
+      // For background change
       setIsScrolled(window.scrollY > 10);
+      
+      // For hiding header on scroll down
+      const currentScrollPos = window.scrollY;
+      const isScrolledDown = prevScrollPos < currentScrollPos;
+      const isScrolledUp = prevScrollPos > currentScrollPos;
+      const isMinimalScroll = currentScrollPos < 50;
+      
+      setPrevScrollPos(currentScrollPos);
+      
+      if (isScrolledDown && currentScrollPos > 70 && !isMenuOpen) {
+        setVisible(false);
+      } else if (isScrolledUp || isMinimalScroll) {
+        setVisible(true);
+      }
     };
     
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [prevScrollPos, isMenuOpen]);
 
   const navItems = [
     { name: 'About', href: '#about', delay: '100ms' },
@@ -29,12 +46,13 @@ const Header = () => {
     <header 
       className={cn(
         'fixed w-full top-0 z-50 transition-all duration-300 ease-in-out px-6 md:px-10 py-4',
-        isScrolled ? 'bg-navy/90 backdrop-blur shadow-md' : 'bg-transparent'
+        isScrolled ? 'bg-navy/90 backdrop-blur shadow-md' : 'bg-transparent',
+        visible ? 'translate-y-0' : '-translate-y-full'
       )}
     >
       <div className="max-w-6xl mx-auto flex items-center justify-between">
         <Link to="/" className="inline-block">
-          <div className="text-aqua font-mono text-2xl font-bold">JS</div>
+          <div className="text-aqua font-mono text-2xl font-bold">BC</div>
         </Link>
 
         {/* Desktop navigation */}
