@@ -29,6 +29,7 @@ const otherProjects = [
     github: 'https://github.com',
     external: 'https://example.com'
   },
+  // Adding more projects to make the "Show More" button actually needed
   {
     title: 'OctoProfile',
     description: 'A nicer look at your GitHub profile and repo stats. Includes data visualizations of your top languages, starred repositories, and sort through your top repos by number of stars, forks, and size.',
@@ -47,6 +48,20 @@ const otherProjects = [
     title: 'Apple Music Embeddable Web Player Widget',
     description: 'Embeddable Apple Music web player widget for WordPress blogs, with playlist support.',
     tags: ['WordPress', 'Apple Music API', 'JS'],
+    github: 'https://github.com',
+    external: 'https://example.com'
+  },
+  {
+    title: 'Markdown Note Taking App',
+    description: 'A simple markdown note-taking application with cloud sync capabilities',
+    tags: ['React', 'Node.js', 'MongoDB'],
+    github: 'https://github.com',
+    external: 'https://example.com'
+  },
+  {
+    title: 'Weather Dashboard',
+    description: 'A weather dashboard that shows current conditions and forecasts using the OpenWeather API',
+    tags: ['JavaScript', 'CSS', 'Weather API'],
     github: 'https://github.com',
     external: 'https://example.com'
   }
@@ -125,7 +140,9 @@ const ProjectCard = ({ project, index }: { project: typeof otherProjects[0], ind
 
 const OtherProjectsSection = () => {
   const [showMore, setShowMore] = useState(false);
-  const visibleProjects = showMore ? otherProjects : otherProjects.slice(0, 6);
+  
+  // Only show 3 projects initially, then up to all when "Show More" is clicked
+  const visibleProjects = showMore ? otherProjects : otherProjects.slice(0, 3);
   
   const toggleShowMore = () => {
     setShowMore(!showMore);
@@ -159,7 +176,7 @@ const OtherProjectsSection = () => {
         ))}
       </div>
       
-      {otherProjects.length > 6 && (
+      {otherProjects.length > 3 && (
         <div className="flex justify-center mt-16">
           <Button
             onClick={toggleShowMore}
