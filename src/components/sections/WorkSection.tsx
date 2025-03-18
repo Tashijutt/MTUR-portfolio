@@ -46,7 +46,7 @@ const FeaturedProject = ({ project, index }: { project: typeof projects[0], inde
   return (
     <div 
       ref={ref}
-      className={`relative grid md:grid-cols-12 gap-10 items-center my-24 transition-all duration-500 transform ${
+      className={`relative grid md:grid-cols-12 gap-8 items-center my-24 transition-all duration-500 transform ${
         inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
       }`}
     >
@@ -58,8 +58,8 @@ const FeaturedProject = ({ project, index }: { project: typeof projects[0], inde
           rel="noopener noreferrer"
           className="block w-full h-full group"
         >
-          <div className="relative w-full h-full bg-navy-light rounded overflow-hidden">
-            <div className="absolute inset-0 bg-aqua/20 hover:bg-transparent group-hover:bg-transparent transition-colors duration-300 z-10"></div>
+          <div className="relative h-full bg-navy-light rounded overflow-hidden aspect-video">
+            <div className="absolute inset-0 bg-aqua/20 group-hover:bg-transparent transition-colors duration-300 z-10"></div>
             <img
               src={project.image}
               alt={project.title}
@@ -71,7 +71,7 @@ const FeaturedProject = ({ project, index }: { project: typeof projects[0], inde
 
       {/* Content Side */}
       <div 
-        className={`md:col-span-7 md:absolute ${
+        className={`md:col-span-6 md:absolute ${
           isEven ? 'md:right-0 text-right' : 'md:left-0 text-left'
         } z-10`}
       >

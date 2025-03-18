@@ -1,11 +1,11 @@
 
 import React, { useState } from 'react';
-import SectionHeading from '../SectionHeading';
 import SectionContainer from '../SectionContainer';
 import { useInView } from 'react-intersection-observer';
 import { Folder, ExternalLink, Github } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const otherProjects = [
   {
@@ -145,14 +145,12 @@ const OtherProjectsSection = () => {
         }`}
       >
         <h2 className="text-slate-light text-3xl font-bold">Other Noteworthy Projects</h2>
-        <a 
-          href="https://github.com"
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link 
+          to="/archive"
           className="inline-block text-aqua hover:underline font-mono text-sm mt-2"
         >
           view the archive
-        </a>
+        </Link>
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -166,7 +164,7 @@ const OtherProjectsSection = () => {
           <Button
             onClick={toggleShowMore}
             variant="outline"
-            className="border border-aqua text-aqua hover:bg-aqua/10 px-6 py-3 rounded"
+            className="border border-aqua text-aqua hover:bg-aqua/10 px-6 py-3 rounded font-mono"
           >
             {showMore ? "Show Less" : "Show More"}
           </Button>
